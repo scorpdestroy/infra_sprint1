@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: kittygram-backend
+    env: python
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn kittygram_backend.wsgi:application --bind 0.0.0.0:$PORT"
